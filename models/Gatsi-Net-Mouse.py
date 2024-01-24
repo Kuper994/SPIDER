@@ -31,9 +31,7 @@ class Submodel(nn.Module):
 
 class GatsbiMouse(nn.Module):
     def __init__(self, expression_size: int, prot_size: int, locations_size: int, graph_matrix: pd.DataFrame,
-                 # gat_model: GAT,
-                 second_input_size: int, p: float = 0.4, first_dropout: bool = True, second_dropout: bool = False,
-                 hidden_size: int = 64):
+                 p: float = 0.3, hidden_size: int = 64):
         super().__init__()
         self.best_model = None
         self._loc_len = int(locations_size / 2)

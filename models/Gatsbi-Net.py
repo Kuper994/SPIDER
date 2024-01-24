@@ -99,7 +99,6 @@ class GatsbiNet(nn.Module):
 
     def forward(self, x, return_gm=False):
         interaction, edge_index = x
-        n_edges = edge_index.shape[0]
         edge_index2 = torch.concat((edge_index, edge_index.permute(0, 1)), dim=0)
         gm_g = self._g_head(self.graph_matrix[:, : self._g_len])
         gm_l = self._l_head(self.graph_matrix[:, self._g_len + self._p_len: self._g_len + self._p_len + self._loc_len])
@@ -164,7 +163,7 @@ class GatsbiNet(nn.Module):
         self.train()
         return auc(recall, precision)
 
-    def train_all(self, dataloaders, datasets, epochs: int = N_EPOCHS, learning_rate: float = LEARNING_RATE):
+    def train_all(self, datasets, epochs: int = N_EPOCHS, learning_rate: float = LEARNING_RATE):
         self.train()
         optim = torch.optim.AdamW(self.parameters(), lr=learning_rate)
         best_validation_accuracy = - float('inf')
