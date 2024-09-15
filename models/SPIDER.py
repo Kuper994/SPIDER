@@ -28,7 +28,7 @@ class Submodel(nn.Module):
         return self._fc(x)
 
 
-class GatsbiNet(nn.Module):
+class SPIDER(nn.Module):
     def __init__(self, expression_size: int, prot_size: int, locations_size: int, graph_matrix: pd.DataFrame,
                  second_input_size: int, p_expression: bool = True, co_abundance: bool = True,
                  p: float = 0.4, hidden_size: int = 64):
