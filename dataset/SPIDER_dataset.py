@@ -13,7 +13,7 @@ co-abundance, locations g1 ... ,locations g2 ..., co locations, methods, edge st
 """
 
 
-class GatbiDataset(Dataset):
+class SPIDERDataset(Dataset):
     def __init__(self, data: pd.DataFrame, y_data: pd.DataFrame = None, expression_size: int = 2,
                  prot_size: int = 3, locations_size: int = 40, methods_size: int = 12, p_expression: bool = True,
                  co_abundance: bool = True):
