@@ -1,0 +1,5 @@
+networkx>=2.8
+torch>=2.0
+scikit-learn>=1.2
+torch-geometric>=2.3
+mygene>=3.2
